@@ -27,16 +27,26 @@ class _ClockViewState extends State<ClockView> {
 class ClockPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    var cX = size.width/2;
-    var cY = size.height/2;
+    var cX = size.width / 2;
+    var cY = size.height / 2;
     var center = Offset(cX, cY);
     var radius = min(cX, cY);
-    var fillBrush = Paint()..color = kfillBrushColor;
-    var outlineBrush = Paint()..color = koutlineBrushColor..strokeWidth = 16 .. style = PaintingStyle.stroke;
+    var fillBrush = Paint()..color = kFillBrushColor;
+    var outlineBrush = Paint()
+      ..color = kOutlineBrushColor
+      ..strokeWidth = 13
+      ..style = PaintingStyle.stroke;
 
-
+    var centerFillBrush = Paint()
+      ..color = kOutlineBrushColor
+      ..strokeWidth = 13
+      ..style = PaintingStyle.stroke;
 
     canvas.drawCircle(center, radius - 40, fillBrush);
+    canvas.drawCircle(center, radius - 40, outlineBrush);
+    canvas.drawCircle(center, 16, centerFillBrush);
+
+
   }
 
   @override
