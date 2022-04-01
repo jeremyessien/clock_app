@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, override_on_non_overriding_member
 import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'constants.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -11,6 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
+  DateTime now = DateTime.now();
+  var formattedTime = DateFormat('HH:mm').format(DateTime.now());
+  var formattedDate = DateFormat('EE, d MMM').format(DateTime.now());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,14 +37,14 @@ class _HomePageState extends State<HomePage> {
               height: 30,
             ),
             Text(
-              'Clock',
+              formattedTime,
               style: TextStyle(
                 color: kOutlineBrushColor,
                 fontSize: 60,
               ),
             ),
             Text(
-              'Clock',
+              formattedDate,
               style: TextStyle(
                 color: kOutlineBrushColor,
                 fontSize: 20,
