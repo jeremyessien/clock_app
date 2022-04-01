@@ -33,29 +33,29 @@ class ClockPainter extends CustomPainter {
     var fillBrush = Paint()..color = kFillBrushColor;
     var outlineBrush = Paint()
       ..color = kOutlineBrushColor
-      ..strokeWidth = 13
+      ..strokeWidth = 16
       ..style = PaintingStyle.stroke;
 
     var centerFillBrush = Paint()
       ..color = kOutlineBrushColor
-      ..strokeWidth = 13
+      ..strokeWidth = 16
       ..style = PaintingStyle.stroke;
     
     var secondHand = Paint()
       ..color = Colors.orange.shade300
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 13
+      ..strokeWidth = 8
       ..style = PaintingStyle.stroke;
 
     var minutesHand = Paint()
       ..shader = RadialGradient(colors: [Colors.lightBlue, Colors.pink]).createShader(Rect.fromCircle(center: center, radius: radius))
-      ..strokeWidth = 13
+      ..strokeWidth = 16
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 
     var hourHand = Paint()
       ..shader = RadialGradient(colors: [Colors.lightBlue, Colors.pink]).createShader(Rect.fromCircle(center: center, radius: radius))
-      ..strokeWidth = 13
+      ..strokeWidth = 16
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
     
@@ -63,8 +63,8 @@ class ClockPainter extends CustomPainter {
     canvas.drawCircle(center, radius - 40, fillBrush);
     canvas.drawCircle(center, radius - 40, outlineBrush);
     canvas.drawLine(center, Offset(100, 100), secondHand);
-    canvas.drawLine(center, Offset(100, 100), minutesHand);
-    canvas.drawLine(center, Offset(100, 100), hourHand);
+    canvas.drawLine(center, Offset(160, 100), minutesHand);
+    canvas.drawLine(center, Offset(200, 100), hourHand);
 
     canvas.drawCircle(center, 16, centerFillBrush);
 
