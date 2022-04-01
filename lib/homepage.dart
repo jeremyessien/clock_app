@@ -19,12 +19,28 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(32),
         alignment: Alignment.center,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Clock',
               style: TextStyle(
                 color: kOutlineBrushColor,
-                fontSize: 24,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 30,),
+            Text(
+              'Clock',
+              style: TextStyle(
+                color: kOutlineBrushColor,
+                fontSize: 60,
+              ),
+            ),
+            Text(
+              'Clock',
+              style: TextStyle(
+                color: kOutlineBrushColor,
+                fontSize: 20,
               ),
             ),
             ClockView(),
