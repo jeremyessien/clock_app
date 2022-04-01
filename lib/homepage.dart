@@ -1,3 +1,4 @@
+import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -12,6 +13,7 @@ class _HomePageState extends State<HomePage> {
     return  Scaffold(
       body: Container(
         color: kContainerBackground,
+        child: ClockView(),
       ),
     );
   }
