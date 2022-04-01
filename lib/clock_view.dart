@@ -59,8 +59,8 @@ class ClockPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 
-    var secondHandX = cX + cos(90 * pi/180);
-    var secondHandY = cX + sin(90 * pi/180);
+    var secondHandX = cX + 80 * cos(90 * pi/180);
+    var secondHandY = cX + 80 * sin(90 * pi/180);
 
     canvas.drawCircle(center, radius - 40, fillBrush);
     canvas.drawCircle(center, radius - 40, outlineBrush);
