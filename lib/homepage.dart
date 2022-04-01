@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,9 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 20,
               ),
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Text(
               'Clock',
               style: TextStyle(
@@ -44,6 +46,34 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ClockView(),
+            Text(
+              'Timezone',
+              style: TextStyle(
+                color: kOutlineBrushColor,
+                fontSize: 24,
+              ),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.language,
+                  color: kOutlineBrushColor,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  'UTC',
+                  style: TextStyle(
+                    color: kOutlineBrushColor,
+                    fontSize: 24,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
