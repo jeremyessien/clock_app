@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:clock_app/constants.dart';
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -30,8 +31,9 @@ class ClockPainter extends CustomPainter {
     var cY = size.height/2;
     var center = Offset(cX, cY);
     var radius = min(cX, cY);
+    var fillBrush = Paint()..color = kfillBrushColor;
 
-    canvas.drawCircle(center, radius, paint)
+    canvas.drawCircle(center, radius, fillBrush);
   }
 
   @override
