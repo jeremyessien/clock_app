@@ -24,17 +24,21 @@ class _HomePageState extends State<HomePage> {
       body: Row(
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(
                 onPressed: () {},
                 child: Column(
                   children: [
                     FlutterLogo(),
-                    Text('Clock'),
+                    Text('Clock', style: TextStyle(color: Colors.white, fontSize: 14),),
                   ],
                 ),
               ),
             ],
+          ),
+          VerticalDivider(
+            color: Colors.white, width: 1,
           ),
           Container(
             padding: EdgeInsets.all(32),
