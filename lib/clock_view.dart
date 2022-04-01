@@ -33,7 +33,7 @@ class ClockPainter extends CustomPainter {
     var radius = min(cX, cY);
     var fillBrush = Paint()..color = kfillBrushColor;
 
-    canvas.drawCircle(center, radius, fillBrush);
+    canvas.drawCircle(center, radius - 40, fillBrush);
   }
 
   @override
