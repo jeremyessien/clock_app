@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
@@ -11,11 +13,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
+      backgroundColor: kContainerBackground,
       body: Container(
+        padding: EdgeInsets.all(32),
         alignment: Alignment.center,
-        color: kContainerBackground,
-        child: ClockView(),
+        child: Column(
+          children: [
+            Text(
+              'Clock',
+              style: TextStyle(
+                color: kOutlineBrushColor,
+                fontSize: 24,
+              ),
+            ),
+            ClockView(),
+          ],
+        ),
       ),
     );
   }
