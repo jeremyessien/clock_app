@@ -11,12 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   DateTime now = DateTime.now();
   var formattedTime = DateFormat('HH:mm').format(DateTime.now());
   var formattedDate = DateFormat('EE, d MMM').format(DateTime.now());
   var timeZone = DateTime.now().timeZoneOffset.toString().split('.').first;
-  var offsetSign = '';
+  var offsetSign = '+';
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +23,19 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: kContainerBackground,
       body: Row(
         children: [
+          Column(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Column(
+                  children: [
+                    FlutterLogo(),
+                    Text('Clock'),
+                  ],
+                ),
+              ),
+            ],
+          ),
           Container(
             padding: EdgeInsets.all(32),
             alignment: Alignment.center,
@@ -75,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                       width: 15,
                     ),
                     Text(
-                      'UTC'  +  offsetSign + timeZone,
+                      'UTC' + offsetSign + timeZone,
                       style: TextStyle(
                         color: kOutlineBrushColor,
                         fontSize: 16,
