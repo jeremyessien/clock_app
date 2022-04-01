@@ -2,12 +2,11 @@ import 'package:clock_app/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(ClockApp());
 }
 
 // ignore: use_key_in_widget_constructors
-class MyApp extends StatelessWidget {
-
+class ClockApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,4 +19,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
