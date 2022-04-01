@@ -2,6 +2,7 @@ import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
+// ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();

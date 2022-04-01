@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -23,7 +25,14 @@ class _ClockViewState extends State<ClockView> {
 
 class ClockPainter extends CustomPainter {
   @override
-  void paint(Canvas canvas, Size size) {}
+  void paint(Canvas canvas, Size size) {
+    var cX = size.width/2;
+    var cY = size.height/2;
+    var center = Offset(cX, cY);
+    var radius = min(cX, cY);
+
+    canvas.drawCircle(center, radius, paint)
+  }
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
