@@ -41,6 +41,18 @@ class ClockPainter extends CustomPainter {
       ..color = kOutlineBrushColor
       ..strokeWidth = 13
       ..style = PaintingStyle.stroke;
+    
+    var secondHand = Paint()
+      ..color = Colors.orange.shade300
+      ..strokeWidth = 13
+      ..style = PaintingStyle.stroke;
+
+    var minutesHand = Paint()
+      // ignore: prefer_const_constructors, prefer_const_literals_to_create_immutables
+      ..shader = RadialGradient(colors: [Colors.lightBlue, Colors.pink]).createShader(Rect.fromCircle(center: center, radius: radius))
+      ..strokeWidth = 13
+      ..style = PaintingStyle.stroke;
+    
 
     canvas.drawCircle(center, radius - 40, fillBrush);
     canvas.drawCircle(center, radius - 40, outlineBrush);
