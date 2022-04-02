@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {},
                 child: Column(
                   children: [
-                    FlutterLogo(),
+                    Image.asset('images/clock_icon.png'),
                     Text('Clock', style: TextStyle(color: Colors.white, fontSize: 14),),
                   ],
                 ),
@@ -40,66 +40,68 @@ class _HomePageState extends State<HomePage> {
           VerticalDivider(
             color: Colors.white, width: 1,
           ),
-          Container(
-            padding: EdgeInsets.all(32),
-            alignment: Alignment.center,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Clock',
-                  style: TextStyle(
-                    color: kOutlineBrushColor,
-                    fontSize: 20,
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  formattedTime,
-                  style: TextStyle(
-                    color: kOutlineBrushColor,
-                    fontSize: 60,
-                  ),
-                ),
-                Text(
-                  formattedDate,
-                  style: TextStyle(
-                    color: kOutlineBrushColor,
-                    fontSize: 20,
-                  ),
-                ),
-                ClockView(),
-                Text(
-                  'Timezone',
-                  style: TextStyle(
-                    color: kOutlineBrushColor,
-                    fontSize: 24,
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.language,
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              alignment: Alignment.center,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Clock',
+                    style: TextStyle(
                       color: kOutlineBrushColor,
+                      fontSize: 20,
                     ),
-                    SizedBox(
-                      width: 15,
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    formattedTime,
+                    style: TextStyle(
+                      color: kOutlineBrushColor,
+                      fontSize: 60,
                     ),
-                    Text(
-                      'UTC' + offsetSign + timeZone,
-                      style: TextStyle(
+                  ),
+                  Text(
+                    formattedDate,
+                    style: TextStyle(
+                      color: kOutlineBrushColor,
+                      fontSize: 20,
+                    ),
+                  ),
+                  ClockView(),
+                  Text(
+                    'Timezone',
+                    style: TextStyle(
+                      color: kOutlineBrushColor,
+                      fontSize: 24,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.language,
                         color: kOutlineBrushColor,
-                        fontSize: 16,
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'UTC' + offsetSign + timeZone,
+                        style: TextStyle(
+                          color: kOutlineBrushColor,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],
