@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Image.asset('images/clock_icon.png'),
+                    SizedBox(height: 16,),
                     Text('Clock', style: TextStyle(color: Colors.white, fontSize: 14),),
                   ],
                 ),
