@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, override_on_non_overriding_member
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, override_on_non_overriding_member, prefer_const_constructors_in_immutables
 import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -26,16 +26,10 @@ class _HomePageState extends State<HomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(
-                onPressed: () {},
-                child: Column(
-                  children: [
-                    Image.asset('images/clock_icon.png'),
-                    SizedBox(height: 16,),
-                    Text('Clock', style: TextStyle(color: Colors.white, fontSize: 14),),
-                  ],
-                ),
-              ),
+              MenuButton(title: 'Clock',),
+              MenuButton(title: 'Alarm', ),
+
+
             ],
           ),
           VerticalDivider(
@@ -106,6 +100,29 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MenuButton extends StatelessWidget {
+// ignore: use_key_in_widget_constructors
+MenuButton({required this.title,});
+final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: TextButton(
+        onPressed: () {},
+        child: Column(
+          children: [
+            Image.asset('images/clock_icon.png'),
+            SizedBox(height: 16,),
+            Text(title, style: TextStyle(color: Colors.white, fontSize: 14),),
+          ],
+        ),
       ),
     );
   }
