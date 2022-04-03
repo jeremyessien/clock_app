@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 64),
               alignment: Alignment.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
