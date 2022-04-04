@@ -44,7 +44,7 @@ class ClockPainter extends CustomPainter {
 
     var centerFillBrush = Paint()
       ..color = kOutlineBrushColor
-      ..strokeWidth = 16
+      ..strokeWidth = 8
       ..style = PaintingStyle.stroke;
     
     var secondHand = Paint()
@@ -86,7 +86,7 @@ class ClockPainter extends CustomPainter {
     var secondHandY = cX + radius * 0.6 * sin(dateTime.second *6 * pi/180);
     canvas.drawLine(center, Offset(secondHandX, secondHandY), secondHand);
 
-    canvas.drawCircle(center, radius * 0.12 , centerFillBrush);
+    canvas.drawCircle(center, radius * 0.04, centerFillBrush);
 
     var externalRadius = radius;
     var internalRadius = radius * 0.9;
