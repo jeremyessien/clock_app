@@ -26,10 +26,10 @@ class _HomePageState extends State<HomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MenuButton(title: 'Clock',),
-              MenuButton(title: 'Alarm', ),
-
-
+              MenuButton('Clock', 'images/clock_icon.png'),
+              MenuButton('Clock', 'images/alarm_icon.png'),
+              MenuButton('Timer', 'images/timer_icon.png'),
+              MenuButton('Stopwatch', 'images/stopwatch_icon.png'),
             ],
           ),
           VerticalDivider(
@@ -105,25 +105,19 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class MenuButton extends StatelessWidget {
-// ignore: use_key_in_widget_constructors
-MenuButton({required this.title,});
-final String title;
 
-  @override
-  Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
-      child: TextButton(
-        onPressed: () {},
-        child: Column(
-          children: [
-            Image.asset('images/clock_icon.png'),
-            SizedBox(height: 16,),
-            Text(title, style: TextStyle(color: Colors.white, fontSize: 14),),
-          ],
-        ),
+// ignore: non_constant_identifier_names
+Padding MenuButton (String title, String image){
+  return Padding(padding: const EdgeInsets.symmetric(vertical: 16.0),
+    child: TextButton(
+      onPressed: () {},
+      child: Column(
+        children: [
+          Image.asset(image, scale: 1.5,),
+          SizedBox(height: 16,),
+          Text(title, style: TextStyle(color: Colors.white, fontSize: 14),),
+        ],
       ),
-    );
-  }
+    ),
+  );
 }
