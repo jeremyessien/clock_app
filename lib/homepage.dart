@@ -43,15 +43,15 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Clock',
-                    style: TextStyle(
-                      color: kOutlineBrushColor,
-                      fontSize: 20,
+                  Flexible(
+                    flex: 1,
+                    child: Text(
+                      'Clock',
+                      style: TextStyle(
+                        color: kOutlineBrushColor,
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 30,
                   ),
                   Text(
                     formattedTime,
