@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Flexible(
-                    flex: 4,
+                    flex: 6,
                     fit: FlexFit.tight,
                     child: Align(
                       alignment: Alignment.center,
