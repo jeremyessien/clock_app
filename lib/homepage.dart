@@ -76,11 +76,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Flexible(
-                    flex: 6,
+                    flex: 4,
                     fit: FlexFit.tight,
                     child: Align(
                       alignment: Alignment.center,
-                      child: ClockView(),
+                      child: ClockView(size: 100,),
                     ),
                   ),
                   Flexible(
