@@ -33,7 +33,8 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           VerticalDivider(
-            color: Colors.white, width: 1,
+            color: Colors.white,
+            width: 1,
           ),
           Expanded(
             child: Container(
@@ -105,17 +106,25 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
 // ignore: non_constant_identifier_names
-Padding MenuButton (String title, String image){
-  return Padding(padding: const EdgeInsets.symmetric(vertical: 16.0),
+Padding MenuButton(String title, String image) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 16.0),
     child: TextButton(
       onPressed: () {},
       child: Column(
         children: [
-          Image.asset(image, scale: 1.5,),
-          SizedBox(height: 16,),
-          Text(title, style: TextStyle(color: Colors.white, fontSize: 14),),
+          Image.asset(
+            image,
+            scale: 1.5,
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Text(
+            title,
+            style: TextStyle(color: Colors.white, fontSize: 14),
+          ),
         ],
       ),
     ),
