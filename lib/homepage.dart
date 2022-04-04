@@ -53,48 +53,72 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Text(
-                    formattedTime,
-                    style: TextStyle(
-                      color: kOutlineBrushColor,
-                      fontSize: 60,
-                    ),
-                  ),
-                  Text(
-                    formattedDate,
-                    style: TextStyle(
-                      color: kOutlineBrushColor,
-                      fontSize: 20,
-                    ),
-                  ),
-                  ClockView(),
-                  Text(
-                    'Timezone',
-                    style: TextStyle(
-                      color: kOutlineBrushColor,
-                      fontSize: 24,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.language,
-                        color: kOutlineBrushColor,
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        'UTC' + offsetSign + timeZone,
-                        style: TextStyle(
-                          color: kOutlineBrushColor,
-                          fontSize: 16,
+                  Flexible(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          formattedTime,
+                          style: TextStyle(
+                            color: kOutlineBrushColor,
+                            fontSize: 60,
+                          ),
                         ),
-                      ),
-                    ],
+                        Text(
+                          formattedDate,
+                          style: TextStyle(
+                            color: kOutlineBrushColor,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    flex: 4,
+                    fit: FlexFit.tight,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: ClockView(),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Timezone',
+                          style: TextStyle(
+                            color: kOutlineBrushColor,
+                            fontSize: 24,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.language,
+                              color: kOutlineBrushColor,
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'UTC' + offsetSign + timeZone,
+                              style: TextStyle(
+                                color: kOutlineBrushColor,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
