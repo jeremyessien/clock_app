@@ -38,18 +38,21 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 64),
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               alignment: Alignment.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Flexible(
-                    flex: 1,
-                    child: Text(
-                      'Clock',
-                      style: TextStyle(
-                        color: kOutlineBrushColor,
-                        fontSize: 20,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 30.0),
+                    child: Flexible(
+                      flex: 1,
+                      child: Text(
+                        'Clock',
+                        style: TextStyle(
+                          color: kOutlineBrushColor,
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                   ),
