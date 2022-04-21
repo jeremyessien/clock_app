@@ -135,6 +135,9 @@ Padding MenuButton(String title, String image) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 16.0),
     child: TextButton(
+      style: TextButton.styleFrom(
+        primary: title == 'Clock' ? Colors.redAccent : Colors.transparent,
+      ),
       onPressed: () {},
       child: Column(
         children: [
@@ -151,6 +154,7 @@ Padding MenuButton(String title, String image) {
           ),
         ],
       ),
+
     ),
   );
 }
