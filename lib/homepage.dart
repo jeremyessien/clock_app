@@ -56,8 +56,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Flexible(
-                    flex: 2,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
