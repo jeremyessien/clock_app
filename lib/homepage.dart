@@ -3,9 +3,11 @@ import 'package:clock_app/clock_view.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -21,113 +23,117 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kContainerBackground,
-      body: Row(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 10.h,),
+          child: Row(
             children: [
-              MenuButton('Clock', 'images/clock_icon.png'),
-              MenuButton('Clock', 'images/alarm_icon.png'),
-              MenuButton('Timer', 'images/timer_icon.png'),
-              MenuButton('Stopwatch', 'images/stopwatch_icon.png'),
-            ],
-          ),
-          VerticalDivider(
-            color: Colors.white,
-            width: 1,
-          ),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-              alignment: Alignment.center,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 30.0),
-                    child: Flexible(
-                      flex: 1,
-                      child: Text(
-                        'Clock',
-                        style: TextStyle(
-                          color: kOutlineBrushColor,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          formattedTime,
-                          style: TextStyle(
-                            color: kOutlineBrushColor,
-                            fontSize: 60,
-                          ),
-                        ),
-                        Text(
-                          formattedDate,
+                  MenuButton('Clock', 'images/clock_icon.png'),
+                  MenuButton('Clock', 'images/alarm_icon.png'),
+                  MenuButton('Timer', 'images/timer_icon.png'),
+                  MenuButton('Stopwatch', 'images/stopwatch_icon.png'),
+                ],
+              ),
+              VerticalDivider(
+                color: Colors.white,
+                width: 1,
+              ),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: Text(
+                          'Clock',
                           style: TextStyle(
                             color: kOutlineBrushColor,
                             fontSize: 20,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Flexible(
-                    flex: 4,
-                    fit: FlexFit.tight,
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: ClockView(size: MediaQuery.of(context).size.height/4,),
-                    ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    fit: FlexFit.tight,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Timezone',
-                          style: TextStyle(
-                            color: kOutlineBrushColor,
-                            fontSize: 24,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 30,
-                        ),
-                        Row(
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.language,
-                              color: kOutlineBrushColor,
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
                             Text(
-                              'UTC' + offsetSign + timeZone,
+                              formattedTime,
                               style: TextStyle(
                                 color: kOutlineBrushColor,
-                                fontSize: 16,
+                                fontSize: 60,
+                              ),
+                            ),
+                            Text(
+                              formattedDate,
+                              style: TextStyle(
+                                color: kOutlineBrushColor,
+                                fontSize: 20,
                               ),
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                      Flexible(
+                        flex: 4,
+                        fit: FlexFit.tight,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: ClockView(size: MediaQuery.of(context).size.height/4,),
+                        ),
+                      ),
+                      Flexible(
+                        flex: 2,
+                        fit: FlexFit.tight,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Timezone',
+                              style: TextStyle(
+                                color: kOutlineBrushColor,
+                                fontSize: 24,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 30,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.language,
+                                  color: kOutlineBrushColor,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Text(
+                                  'UTC' + offsetSign + timeZone,
+                                  style: TextStyle(
+                                    color: kOutlineBrushColor,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
