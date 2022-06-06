@@ -1,5 +1,9 @@
+import 'package:clock_app/enum.dart';
 import 'package:clock_app/homepage.dart';
+import 'package:clock_app/menu_info.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 
 void main() {
   runApp(ClockApp());
@@ -15,7 +19,8 @@ class ClockApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: ChangeNotifierProvider(create: (BuildContext context) {MenuInfo(MenuType.clock);  },
+      child: HomePage())
     );
   }
 }
