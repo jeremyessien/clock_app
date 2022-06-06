@@ -60,27 +60,24 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              formattedTime,
-                              style: TextStyle(
-                                color: kOutlineBrushColor,
-                                fontSize: 60,
-                              ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            formattedTime,
+                            style: TextStyle(
+                              color: kOutlineBrushColor,
+                              fontSize: 60,
                             ),
-                            Text(
-                              formattedDate,
-                              style: TextStyle(
-                                color: kOutlineBrushColor,
-                                fontSize: 20,
-                              ),
+                          ),
+                          Text(
+                            formattedDate,
+                            style: TextStyle(
+                              color: kOutlineBrushColor,
+                              fontSize: 20,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                       Flexible(
                         flex: 4,
