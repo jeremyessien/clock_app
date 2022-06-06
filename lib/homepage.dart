@@ -1,7 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, override_on_non_overriding_member, prefer_const_constructors_in_immutables
+import 'dart:js';
+
 import 'package:clock_app/clock_view.dart';
+import 'package:clock_app/menu_info.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -144,7 +148,9 @@ Padding MenuButton(String title, String image) {
       style: TextButton.styleFrom(
         primary: title == 'Clock' ? Colors.redAccent : Colors.transparent,
       ),
-      onPressed: () {},
+      onPressed: () {
+        var menuInfo = Provider.of<MenuInfo>(context);
+      },
       child: Column(
         children: [
           Image.asset(
